@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -19,10 +19,11 @@
     @stack('styles')
 </head>
 
-<body class="bg-background-dark text-white selection:bg-primary selection:text-white">
+<body class="bg-white text-black selection:bg-primary selection:text-white min-h-screen">
+
     @include('partials.header')
 
-    <main>
+    <main class="bg-white">
         @yield('content')
     </main>
 

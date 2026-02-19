@@ -17,13 +17,14 @@
                     </div>
 
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-8 leading-[1.1] font-display">
-                        CONECTAMOS <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">ALIANZAS</span> <br/>
-                        <span class="text-primary">QUE TRANSFORMAN</span>
+                        CIDECH <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500"> # 1 en resultados y </span> <br/>
+                        <span class="text-primary">formación </span>
                     </h1>
 
                     <p class="mt-4 max-w-2xl text-xl md:text-2xl text-gray-400 mb-10 font-light border-l-4 border-primary pl-6">
-                        Articulamos esfuerzos entre el sector público y privado para reducir brechas sociales con proyectos de alto impacto.
+                        Mejores en resultados académicos y formación de valores.
+                        Transformamos estudiantes en líderes con impacto real en su futuro.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-5 mb-16">
@@ -69,7 +70,9 @@
                 <div class="md:w-1/2">
                     <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">¿Qué es <span class="text-primary">CIDECH</span>?</h2>
                     <p class="text-lg text-gray-400 leading-relaxed">
-                        Somos el puente entre la intención y la acción. Una organización sin fines de lucro dedicada a potenciar el desarrollo social mediante la articulación inteligente de recursos.
+                        CIDECH es un centro especializado en preparación preuniversitaria de alto rendimiento.
+                        Usa algoritmos propios para resolver problemas de exámenes de admisión en menos de 30 segundos.
+                        Se enfoca en el ingreso a universidades nacionales y en obtener becas.
                     </p>
                 </div>
 
@@ -89,7 +92,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4 font-display">Nuestra Misión</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        Promover el desarrollo integral a través de la educación y la innovación social, creando ecosistemas de crecimiento sostenible.
+                        Preparar a estudiantes para ingresar a universidades y obtener becas mediante métodos de alto rendimiento, desarrollando su máximo potencial.
                     </p>
                 </div>
 
@@ -99,7 +102,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4 font-display">Nuestro Enfoque</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        Trabajo colaborativo, transparencia absoluta y resultados medibles a largo plazo que garantizan el retorno social de la inversión.
+                        Usamos algoritmos propios y metodologías innovadoras para resolver problemas de exámenes de manera rápida y efectiva.
                     </p>
                 </div>
 
@@ -109,7 +112,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4 font-display">Impacto Social</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        Más de 15,000 beneficiarios directos en programas de educación, salud y emprendimiento transformando comunidades en todo el país.
+                        Facilitamos el acceso equitativo a la educación superior y promovemos el desarrollo académico y personal de los jóvenes.
                     </p>
                 </div>
             </div>
@@ -143,10 +146,10 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
                 <div class="absolute bottom-0 left-0 p-8 w-full">
                     <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs font-bold uppercase tracking-wider rounded mb-4">En curso</span>
-                    <h3 class="text-3xl font-bold text-white mb-2 group-hover:text-primary transition-colors font-display">Reforestación Urbana Norte</h3>
-                    <p class="text-gray-300 mb-6 line-clamp-2">Iniciativa masiva para plantar 500 árboles en zonas urbanas críticas con la participación de estudiantes voluntarios y vecinos.</p>
+                    <h3 class="text-3xl font-bold text-white mb-2 group-hover:text-primary transition-colors font-display">Convenio UNI – CIDECH</h3>
+                    <p class="text-gray-300 mb-6 line-clamp-2">Gracias a nuestro convenio con la Universidad Nacional de Ingeniería (UNI), en CIDECH nuestros estudiantes pueden rendir el Examen Descentralizado de la UNI directamente en sedes autorizadas.</p>
                     <div class="flex items-center text-sm font-medium text-white/80">
-                        <span class="material-symbols-outlined mr-2 text-primary">location_on</span> Lima Norte
+                        <span class="material-symbols-outlined mr-2 text-primary">location_on</span> Arequipa - Tacna
                     </div>
                 </div>
             </div>
@@ -154,15 +157,15 @@
             {{-- Card 2 --}}
             <div class="min-w-[85vw] md:min-w-[600px] h-[500px] relative rounded-2xl overflow-hidden group snap-center cursor-pointer">
                 <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0keUKILoTsKj9TcSzMMPJkQjc_5keUsdo3Xc854E3zzJD-l3Xk1flJP7B0HWr-OtyTlbFFHb52OCnOunN02ZNmybmNbT7poOG1ixj-PI2ekwvUYGFGb4UlX94hxYV8Qqi74jt3C78CK2cNP33O3mOH2nZ4QpZt1pZuTIkzFNXYdNcjC5yxyUciA0UYVKLHIIL7ASPN1ni_miXOVTtpDzyakoqaHwil3hOwnsaemm_4C2IBwb2S6MOZzlmIigLb2saIdz7FVtLU5XT"
+                     src="img/proyectos/promube.png"
                      alt="Agua"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
                 <div class="absolute bottom-0 left-0 p-8 w-full">
-                    <span class="inline-block px-3 py-1 bg-gray-600 text-white text-xs font-bold uppercase tracking-wider rounded mb-4">Finalizado</span>
-                    <h3 class="text-3xl font-bold text-white mb-2 group-hover:text-primary transition-colors font-display">Agua Limpia para Todos</h3>
-                    <p class="text-gray-300 mb-6 line-clamp-2">Implementación de sistemas avanzados de filtrado de agua en comunidades rurales altoandinas sin acceso a servicios básicos.</p>
+                    <span class="inline-block px-3 py-1 bg-gray-600 text-white text-xs font-bold uppercase tracking-wider rounded mb-4">En curso</span>
+                    <h3 class="text-3xl font-bold text-white mb-2 group-hover:text-primary transition-colors font-display">PROMUBE</h3>
+                    <p class="text-gray-300 mb-6 line-clamp-2">En CIDECH, PROMUBE está integrado como parte de nuestros proyectos educativos y de becas, enfocado en brindar oportunidades reales a estudiantes con talento, ofreciendo acceso a becas municipales</p>
                     <div class="flex items-center text-sm font-medium text-white/80">
-                        <span class="material-symbols-outlined mr-2 text-primary">location_on</span> Cusco
+                        <span class="material-symbols-outlined mr-2 text-primary">location_on</span>Arequipa - Tacna - Lima
                     </div>
                 </div>
             </div>
@@ -251,46 +254,62 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-16">
                 <div>
                     <span class="text-primary font-bold uppercase tracking-widest mb-2 block">Liderazgo</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white font-display">Nuestro Equipo Directivo</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white font-display">Orgullo Académico</h2>
                 </div>
                 <p class="max-w-md text-gray-500 mt-4 md:mt-0 text-right">Expertos comprometidos con la excelencia y el impacto social medible.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {{-- 1 --}}
-                <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded bg-gray-900 mb-5 relative overflow-hidden">
-                        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqmR5ihyc2SuZR3IbNn5a3dmZCn4XDFmbpfcRh02ch3p_GjWelM3hwvkPPq87aCKRp9cYlNJsvV75K06Ujy0D__4wriTcw76hYL_kmkiZiCMyu2IlQQPYKRhUUBjawiP7Nn_RQrHfQKuCcNwkvo9lw_OURDcAc66vss_JaxjzEQuTY87a7V5OOmsWGaSF2Ewq8dbUm3ktHhGqUiqk1Um288ct9xqg2dvTqKlmc6Nb0Q3wqkQ99HwehjnlZlcCwd-RXaNYtzHPKNZPb"
-                             alt="Dr. Arthur Vance"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="absolute bottom-0 left-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                            <a class="text-white hover:text-black bg-black hover:bg-white p-2 rounded-full inline-flex transition-colors" href="#">
-                                <span class="material-symbols-outlined text-sm">link</span>
-                            </a>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors font-display">Dr. Arthur Vance</h3>
-                    <p class="text-xs font-bold text-primary tracking-widest uppercase mb-3">President &amp; Chair</p>
-                    <p class="text-sm text-gray-500 leading-relaxed border-l-2 border-gray-800 pl-3 group-hover:border-primary transition-colors">
-                        Ex decano de ciencias con 30 años en política académica internacional.
-                    </p>
-                </div>
 
-                {{-- 2 --}}
-                <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded bg-gray-900 mb-5 relative overflow-hidden">
-                        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcQQhrMuZAVU3EAiBFarGwj-cvmDUIiS2bjCzkf3X0DpABs_RmzG7M7Yqbbul-qMlXz0-8yKLkOz_UXmD51T6BjoLWTN7c7XatLthcrrb3oRATtDREDNTkmRkZC-8A1yqE-AdYIgWqt_Z6tcFINwQfV5lGH1tlU_VRY-P8NT5sdbIRoY79HEE_lltAync7pMqo7aZXwZqB33_zyDfNq6CnA5ALfQq3NtzkIo_W4dixFpi3hTUQAbDWACZpTcOrDCjpUFfgL3ULE3Qn"
-                             alt="Prof. Elena Moretti"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors font-display">Prof. Elena Moretti</h3>
-                    <p class="text-xs font-bold text-primary tracking-widest uppercase mb-3">Executive Director</p>
-                    <p class="text-sm text-gray-500 leading-relaxed border-l-2 border-gray-800 pl-3 group-hover:border-primary transition-colors">
-                        Especialista en desarrollo sostenible e innovación institucional.
-                    </p>
-                </div>
+
+{{-- 1 --}}
+<div class="group relative">
+    <div class="aspect-[3/4] w-full rounded bg-gray-900 mb-5 relative overflow-hidden">
+        <img src="{{ asset('img/estudiantes/milton.png') }}" 
+             alt="Milton Ccota Mamani"
+             class="w-full h-full object-cover"/>
+             
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        <div class="absolute bottom-0 left-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <a class="text-white hover:text-black bg-black hover:bg-white p-2 rounded-full inline-flex transition-colors" href="#">
+                <span class="material-symbols-outlined text-sm">link</span>
+            </a>
+        </div>
+    </div>
+    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors font-display">
+        Milton Ccota Mamani
+    </h3>
+    <p class="text-xs font-bold text-primary tracking-widest uppercase mb-3">
+        Ingeniería Civil
+    </p>
+    <p class="text-sm text-gray-500 leading-relaxed border-l-2 border-gray-800 pl-3 group-hover:border-primary transition-colors">
+        🎓🏛️ Ingresante a la Universidad Nacional de Ingeniería – IEN 2026
+    </p>
+</div>
+
+
+{{-- 2 --}}
+<div class="group relative">
+    <div class="aspect-[3/4] w-full rounded bg-gray-900 mb-5 relative overflow-hidden">
+        
+        <img src="{{ asset('img/estudiantes/alex.png') }}"
+             alt="Alex Gallegos Humire"
+             class="w-full h-full object-cover"/>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>      
+    </div>
+    <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors font-display">
+        Alex Gallegos Humire
+    </h3>
+    <p class="text-xs font-bold text-primary tracking-widest uppercase mb-3">
+        Ingeniería Química
+    </p>
+    <p class="text-sm text-gray-500 leading-relaxed border-l-2 border-gray-800 pl-3 group-hover:border-primary transition-colors">
+        👑🎓 1er Puesto (IEN-2026) – Universidad Nacional de Ingeniería
+    </p>
+</div>
+
 
                 {{-- 3 --}}
                 <div class="group relative">
