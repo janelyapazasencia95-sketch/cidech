@@ -3,162 +3,107 @@
 @section('title', 'CIDECH Home: Impact Variant')
 
 @section('content')
-    {{-- HERO --}}
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-background-dark">
-        <div
-            class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none">
+{{-- HERO --}}
+<section id="inicio"
+  class="relative overflow-hidden bg-background-dark
+         pt-[calc(var(--nav-h)+3rem)] lg:pt-[calc(var(--nav-h)+6rem)]
+         pb-22
+         min-h-[calc(100svh-var(--nav-h)-40px)] lg:min-h-[calc(100svh-var(--nav-h)-40px)]">
+
+  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+      {{-- IZQUIERDA --}}
+      <div class="lg:col-span-8">
+        {{-- TITULAR RESPONSIVE (clamp) --}}
+        <h1 class="font-display font-black tracking-tight leading-[0.95]">
+          <span class="block text-white text-[clamp(2.2rem,4.6vw,4.0rem)]">
+            CIDECH
+          </span>
+
+          <span class="block mt-2 text-white text-[clamp(2.6rem,5.4vw,4.8rem)]">
+            #1 en
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">
+              resultados y
+            </span>
+          </span>
+
+          <span class="block mt-2 text-primary text-[clamp(2.8rem,5.9vw,5.2rem)]">
+            formación
+          </span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-[clamp(1.05rem,1.3vw,1.35rem)] text-gray-400 font-light border-l-4 border-primary pl-6 leading-relaxed">
+          Mejores en resultados académicos y formación de valores.
+          Transformamos estudiantes en líderes con impacto real en su futuro.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-5">
+          <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded bg-primary text-white hover:bg-primary-hover shadow-[0_0_20px_rgba(239,35,60,0.4)] hover:shadow-[0_0_30px_rgba(239,35,60,0.6)] transition-all duration-300 transform hover:-translate-y-1"
+             href="#proyectos">
+            VER PROYECTOS
+            <span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+          </a>
+
+          <a class="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-base font-bold rounded text-white hover:bg-white hover:text-black transition-all duration-300"
+             href="#aliados">
+            SER ALIADO
+          </a>
         </div>
-        <div
-            class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px] pointer-events-none">
-        </div>
+      </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-8">
-                    <div class="inline-flex items-center px-3 py-1 rounded bg-primary/10 border border-primary/30 mb-6">
-                        <span class="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                        <span class="text-xs font-bold text-primary uppercase tracking-widest">Impacto Social Real</span>
-                    </div>
-
-                    <h1
-                        class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-8 leading-[1.1] font-display">
-                        CIDECH <br />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500"> #
-                            1 en resultados y </span> <br />
-                        <span class="text-primary">formación </span>
-                    </h1>
-
-                    <p
-                        class="mt-4 max-w-2xl text-xl md:text-2xl text-gray-400 mb-10 font-light border-l-4 border-primary pl-6">
-                        Mejores en resultados académicos y formación de valores.
-                        Transformamos estudiantes en líderes con impacto real en su futuro.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-5 mb-16">
-                        <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded bg-primary text-white hover:bg-primary-hover shadow-[0_0_20px_rgba(239,35,60,0.4)] hover:shadow-[0_0_30px_rgba(239,35,60,0.6)] transition-all duration-300 transform hover:-translate-y-1"
-                            href="#proyectos">
-                            VER PROYECTOS
-                            <span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
-                        </a>
-
-                        <a class="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-base font-bold rounded text-white hover:bg-white hover:text-black transition-all duration-300"
-                            href="#aliados">
-                            SER ALIADO
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-4 flex flex-col gap-8 lg:border-l lg:border-gray-800 lg:pl-12">
-                    <div class="group">
-                        <p
-                            class="text-6xl md:text-7xl font-black text-white group-hover:text-primary transition-colors duration-300">
-                            +50</p>
-                        <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Proyectos Ejecutados
-                        </p>
-                    </div>
-                    <div class="w-full h-px bg-gray-800 lg:hidden"></div>
-                    <div class="group">
-                        <p
-                            class="text-6xl md:text-7xl font-black text-white group-hover:text-primary transition-colors duration-300">
-                            +30</p>
-                        <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Aliados Estratégicos
-                        </p>
-                    </div>
-                    <div class="w-full h-px bg-gray-800 lg:hidden"></div>
-                    <div class="group">
-                        <p
-                            class="text-6xl md:text-7xl font-black text-white group-hover:text-primary transition-colors duration-300">
-                            100%</p>
-                        <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Cobertura Nacional</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- NOSOTROS --}}
-    <section id="nosotros" class="py-24 bg-surface-dark relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20">
+      {{-- DERECHA --}}
+      <div class="lg:col-span-4 flex flex-col gap-10 lg:border-l lg:border-gray-800 lg:pl-12 mt-10 lg:mt-0">
+        <div class="group">
+          <p class="font-black text-white group-hover:text-primary transition-colors duration-300 text-[clamp(2.4rem,4.2vw,4.2rem)]">
+            +50
+          </p>
+          <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Proyectos Ejecutados</p>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="mb-16 md:flex md:justify-between md:items-end">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 font-display">¿Qué es <span
-                            class="text-primary">CIDECH</span>?</h2>
-                    <p class="text-lg text-gray-400 leading-relaxed">
-                        CIDECH es un centro especializado en preparación preuniversitaria de alto rendimiento.
-                        Usa algoritmos propios para resolver problemas de exámenes de admisión en menos de 30 segundos.
-                        Se enfoca en el ingreso a universidades nacionales y en obtener becas.
-                    </p>
-                </div>
+        <div class="w-full h-px bg-gray-800 lg:hidden"></div>
 
-                <div class="mt-8 md:mt-0">
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-300"><span
-                                class="material-symbols-outlined text-primary mr-3">check_circle</span>Gestión de recursos
-                            eficiente</li>
-                        <li class="flex items-center text-gray-300"><span
-                                class="material-symbols-outlined text-primary mr-3">check_circle</span>Programas educativos
-                            de calidad</li>
-                        <li class="flex items-center text-gray-300"><span
-                                class="material-symbols-outlined text-primary mr-3">check_circle</span>Fortalecimiento
-                            institucional</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div
-                    class="glass-card p-8 rounded-xl hover:bg-white/5 transition-all duration-300 border-t-4 border-t-primary">
-                    <div class="h-14 w-14 rounded bg-primary/20 flex items-center justify-center mb-6 text-primary">
-                        <span class="material-symbols-outlined text-3xl">flag</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 font-display">Nuestra Misión</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Preparar a estudiantes para ingresar a universidades y obtener becas mediante métodos de alto
-                        rendimiento, desarrollando su máximo potencial.
-                    </p>
-                </div>
-
-                <div
-                    class="glass-card p-8 rounded-xl hover:bg-white/5 transition-all duration-300 border-t-4 border-t-blue-500">
-                    <div class="h-14 w-14 rounded bg-blue-500/20 flex items-center justify-center mb-6 text-blue-500">
-                        <span class="material-symbols-outlined text-3xl">visibility</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 font-display">Nuestro Enfoque</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Usamos algoritmos propios y metodologías innovadoras para resolver problemas de exámenes de manera
-                        rápida y efectiva.
-                    </p>
-                </div>
-
-                <div
-                    class="glass-card p-8 rounded-xl hover:bg-white/5 transition-all duration-300 border-t-4 border-t-green-500">
-                    <div class="h-14 w-14 rounded bg-green-500/20 flex items-center justify-center mb-6 text-green-500">
-                        <span class="material-symbols-outlined text-3xl">favorite</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4 font-display">Impacto Social</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Facilitamos el acceso equitativo a la educación superior y promovemos el desarrollo académico y
-                        personal de los jóvenes.
-                    </p>
-                </div>
-            </div>
+        <div class="group">
+          <p class="font-black text-white group-hover:text-primary transition-colors duration-300 text-[clamp(2.4rem,4.2vw,4.2rem)]">
+            +30
+          </p>
+          <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Aliados Estratégicos</p>
         </div>
-    </section>
 
-{{{-- PROYECTOS --}}
-<section class="py-24 bg-background-dark border-y border-gray-800" id="proyectos">
+        <div class="w-full h-px bg-gray-800 lg:hidden"></div>
+
+        <div class="group">
+          <p class="font-black text-white group-hover:text-primary transition-colors duration-300 text-[clamp(2.8rem,4.6vw,4.6rem)]">
+            100%
+          </p>
+          <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Cobertura Nacional</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{-- Indicador abajo (pegado al borde) --}}
+  <a href="#nosotros"
+     class="absolute bottom-1 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+    <span class="text-xs font-bold uppercase tracking-widest">Desliza</span>
+    <span class="material-symbols-outlined animate-bounce">keyboard_arrow_down</span>
+  </a>
+
+  {{-- Línea inferior pegada al borde del hero --}}
+  <div class="absolute left-0 right-0 bottom-0 h-px bg-white/10"></div>
+</section>
+
+{{-- PROYECTOS --}}
+<section class="py-24 lg:py-20 bg-background-dark border-b border-gray-800" id="proyectos">
     @php
-        use Illuminate\Support\Str;
-
         $fallback = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80';
-
-        // soporta URL (https://) y ruta local (img/...)
         $img = function ($path, $fallback) {
             if (blank($path)) return $fallback;
-            return Str::startsWith($path, ['http://','https://']) ? $path : asset($path);
+            return \Illuminate\Support\Str::startsWith($path, ['http://','https://']) ? $path : asset($path);
         };
     @endphp
 
@@ -183,9 +128,8 @@
         </div>
     </div>
 
-    {{-- Carrusel --}}
     <div id="projectsCarousel"
-        class="flex overflow-x-auto hide-scrollbar gap-6 px-4 sm:px-6 lg:px-8 pb-8 snap-x snap-proximity scroll-smooth">
+         class="flex overflow-x-auto hide-scrollbar gap-6 px-4 sm:px-6 lg:px-8 pb-8 snap-x snap-proximity scroll-smooth">
 
         @forelse(($projects ?? collect())->take(5) as $p)
             <a href="{{ route('proyectos.show', $p) }}"
@@ -217,9 +161,7 @@
                 </div>
             </a>
         @empty
-            <div class="w-full text-center text-gray-400 py-12">
-                Aún no hay proyectos publicados.
-            </div>
+            <div class="w-full text-center text-gray-400 py-12">Aún no hay proyectos publicados.</div>
         @endforelse
     </div>
 
@@ -249,8 +191,6 @@
         let timer = null;
         let paused = false;
         let pauseTimer = null;
-
-        // más alto = más lento
         const INTERVAL = 5500;
 
         function pauseAuto(ms = 3500) {
@@ -303,134 +243,116 @@
     </script>
 </section>
 
-    {{-- ALIADOS --}}
-    <section class="py-24 bg-surface-dark" id="aliados">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 font-display">Red de Convenios Institucionales</h2>
-            <p class="max-w-2xl mx-auto text-xl text-gray-400 mb-12">
-                Unimos fuerzas con las instituciones más importantes del país.
-            </p>
+{{-- ALIADOS --}}
+<section class="py-24 lg:py-28 bg-surface-dark" id="aliados">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 font-display">Red de Convenios Institucionales</h2>
+        <p class="max-w-2xl mx-auto text-xl text-gray-400 mb-12">
+            Unimos fuerzas con las instituciones más importantes del país.
+        </p>
 
-            {{-- Tabs --}}
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <button
-                    class="ally-tab px-8 py-3 rounded-full bg-primary text-white font-bold tracking-wide shadow-lg shadow-primary/30 transform hover:scale-105 transition-all"
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+            <button class="ally-tab px-8 py-3 rounded-full bg-primary text-white font-bold tracking-wide shadow-lg shadow-primary/30 transform hover:scale-105 transition-all"
                     type="button" data-category="municipalidades" aria-pressed="true">
-                    MUNICIPALIDADES
-                </button>
+                MUNICIPALIDADES
+            </button>
 
-                <button
-                    class="ally-tab px-8 py-3 rounded-full bg-transparent border border-gray-600 text-gray-300 font-medium hover:border-white hover:text-white transition-all"
+            <button class="ally-tab px-8 py-3 rounded-full bg-transparent border border-gray-600 text-gray-300 font-medium hover:border-white hover:text-white transition-all"
                     type="button" data-category="colegios" aria-pressed="false">
-                    COLEGIOS
-                </button>
+                COLEGIOS
+            </button>
 
-                <button
-                    class="ally-tab px-8 py-3 rounded-full bg-transparent border border-gray-600 text-gray-300 font-medium hover:border-white hover:text-white transition-all"
+            <button class="ally-tab px-8 py-3 rounded-full bg-transparent border border-gray-600 text-gray-300 font-medium hover:border-white hover:text-white transition-all"
                     type="button" data-category="institutos" aria-pressed="false">
-                    INSTITUTOS
-                </button>
-            </div>
-
-            {{-- Grid (se llena por JS) --}}
-            <div id="alliesGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"></div>
-
-
+                INSTITUTOS
+            </button>
         </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const grid = document.getElementById('alliesGrid');
-                const tabs = Array.from(document.querySelectorAll('.ally-tab'));
+        <div id="alliesGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"></div>
+    </div>
 
-                // ✅ Cambia estas rutas por tus fotos/logos reales
-                // Recomendado: public/img/aliados/{municipalidades|colegios|institutos}/xxx.png
-                const ALLIES = {
-                    municipalidades: [
-                        { name: 'MUNI 1', src: "{{ asset('img/aliados/municipalidades/muni-01.png') }}" },
-                        { name: 'MUNI 2', src: "{{ asset('img/aliados/municipalidades/muni-02.png') }}" },
-                        { name: 'MUNI 3', src: "{{ asset('img/aliados/municipalidades/muni-03.png') }}" },
-                        { name: 'MUNI 4', src: "{{ asset('img/aliados/municipalidades/muni-04.png') }}" },
-                        { name: 'MUNI 5', src: "{{ asset('img/aliados/municipalidades/muni-05.png') }}" },
-                        { name: 'MUNI 6', src: "{{ asset('img/aliados/municipalidades/muni-06.png') }}" },
-                    ],
-                    colegios: [
-                        { name: 'COLEGIO 1', src: "{{ asset('img/aliados/colegios/col-01.png') }}" },
-                        { name: 'COLEGIO 2', src: "{{ asset('img/aliados/colegios/col-02.png') }}" },
-                        { name: 'COLEGIO 3', src: "{{ asset('img/aliados/colegios/col-03.png') }}" },
-                        { name: 'COLEGIO 4', src: "{{ asset('img/aliados/colegios/col-04.png') }}" },
-                        { name: 'COLEGIO 5', src: "{{ asset('img/aliados/colegios/col-05.png') }}" },
-                        { name: 'COLEGIO 6', src: "{{ asset('img/aliados/colegios/col-06.png') }}" },
-                    ],
-                    institutos: [
-                        { name: 'INSTITUTO 1', src: "{{ asset('img/aliados/institutos/ins-01.png') }}" },
-                        { name: 'INSTITUTO 2', src: "{{ asset('img/aliados/institutos/ins-02.png') }}" },
-                        { name: 'INSTITUTO 3', src: "{{ asset('img/aliados/institutos/ins-03.png') }}" },
-                        { name: 'INSTITUTO 4', src: "{{ asset('img/aliados/institutos/ins-04.png') }}" },
-                        { name: 'INSTITUTO 5', src: "{{ asset('img/aliados/institutos/ins-05.png') }}" },
-                        { name: 'INSTITUTO 6', src: "{{ asset('img/aliados/institutos/ins-06.png') }}" },
-                    ],
-                };
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const grid = document.getElementById('alliesGrid');
+        const tabs = Array.from(document.querySelectorAll('.ally-tab'));
 
-                function setActiveTab(category) {
-                    tabs.forEach(btn => {
-                        const isActive = btn.dataset.category === category;
-                        btn.setAttribute('aria-pressed', String(isActive));
+        const ALLIES = {
+          municipalidades: [
+            { name: 'MUNI 1', src: "{{ asset('img/aliados/municipalidades/muni-01.png') }}" },
+            { name: 'MUNI 2', src: "{{ asset('img/aliados/municipalidades/muni-02.png') }}" },
+            { name: 'MUNI 3', src: "{{ asset('img/aliados/municipalidades/muni-03.png') }}" },
+            { name: 'MUNI 4', src: "{{ asset('img/aliados/municipalidades/muni-04.png') }}" },
+            { name: 'MUNI 5', src: "{{ asset('img/aliados/municipalidades/muni-05.png') }}" },
+            { name: 'MUNI 6', src: "{{ asset('img/aliados/municipalidades/muni-06.png') }}" },
+          ],
+          colegios: [
+            { name: 'COLEGIO 1', src: "{{ asset('img/aliados/colegios/col-01.png') }}" },
+            { name: 'COLEGIO 2', src: "{{ asset('img/aliados/colegios/col-02.png') }}" },
+            { name: 'COLEGIO 3', src: "{{ asset('img/aliados/colegios/col-03.png') }}" },
+            { name: 'COLEGIO 4', src: "{{ asset('img/aliados/colegios/col-04.png') }}" },
+            { name: 'COLEGIO 5', src: "{{ asset('img/aliados/colegios/col-05.png') }}" },
+            { name: 'COLEGIO 6', src: "{{ asset('img/aliados/colegios/col-06.png') }}" },
+          ],
+          institutos: [
+            { name: 'INSTITUTO 1', src: "{{ asset('img/aliados/institutos/ins-01.png') }}" },
+            { name: 'INSTITUTO 2', src: "{{ asset('img/aliados/institutos/ins-02.png') }}" },
+            { name: 'INSTITUTO 3', src: "{{ asset('img/aliados/institutos/ins-03.png') }}" },
+            { name: 'INSTITUTO 4', src: "{{ asset('img/aliados/institutos/ins-04.png') }}" },
+            { name: 'INSTITUTO 5', src: "{{ asset('img/aliados/institutos/ins-05.png') }}" },
+            { name: 'INSTITUTO 6', src: "{{ asset('img/aliados/institutos/ins-06.png') }}" },
+          ],
+        };
 
-                        // estilos activo/inactivo
-                        if (isActive) {
-                            btn.classList.add('bg-primary', 'text-white', 'font-bold', 'shadow-lg', 'shadow-primary/30');
-                            btn.classList.remove('bg-transparent', 'border', 'border-gray-600', 'text-gray-300', 'font-medium');
-                        } else {
-                            btn.classList.remove('bg-primary', 'text-white', 'font-bold', 'shadow-lg', 'shadow-primary/30');
-                            btn.classList.add('bg-transparent', 'border', 'border-gray-600', 'text-gray-300', 'font-medium');
-                        }
-                    });
-                }
+        function setActiveTab(category) {
+          tabs.forEach(btn => {
+            const isActive = btn.dataset.category === category;
+            btn.setAttribute('aria-pressed', String(isActive));
 
-                function render(category) {
-                    const items = ALLIES[category] || [];
+            if (isActive) {
+              btn.classList.add('bg-primary', 'text-white', 'font-bold', 'shadow-lg', 'shadow-primary/30');
+              btn.classList.remove('bg-transparent', 'border', 'border-gray-600', 'text-gray-300', 'font-medium');
+            } else {
+              btn.classList.remove('bg-primary', 'text-white', 'font-bold', 'shadow-lg', 'shadow-primary/30');
+              btn.classList.add('bg-transparent', 'border', 'border-gray-600', 'text-gray-300', 'font-medium');
+            }
+          });
+        }
 
-                    // mini fade
-                    grid.classList.add('opacity-0');
-                    grid.classList.add('transition-opacity', 'duration-200');
+        function render(category) {
+          const items = ALLIES[category] || [];
 
-                    setTimeout(() => {
-                        grid.innerHTML = items.map(item => `
-                            <div class="ally-card h-32 bg-background-dark border border-gray-800 rounded-lg flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:border-primary transition-all duration-300 group overflow-hidden">
-                                <img
-                                    src="${item.src}"
-                                    alt="${item.name}"
-                                    loading="lazy"
-                                    class="w-full h-full object-contain p-4"
-                                    onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"
-                                />
-                                <span class="hidden text-sm font-bold text-gray-500 group-hover:text-primary px-2">${item.name}</span>
-                            </div>
-                        `).join('');
+          grid.classList.add('opacity-0', 'transition-opacity', 'duration-200');
 
-                        grid.classList.remove('opacity-0');
-                    }, 120);
-                }
+          setTimeout(() => {
+            grid.innerHTML = items.map(item => `
+              <div class="ally-card h-32 bg-background-dark border border-gray-800 rounded-lg flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:border-primary transition-all duration-300 group overflow-hidden">
+                <img src="${item.src}" alt="${item.name}" loading="lazy"
+                     class="w-full h-full object-contain p-4"
+                     onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');" />
+                <span class="hidden text-sm font-bold text-gray-500 group-hover:text-primary px-2">${item.name}</span>
+              </div>
+            `).join('');
 
-                // Click tabs
-                tabs.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const category = btn.dataset.category;
-                        setActiveTab(category);
-                        render(category);
-                    });
-                });
+            grid.classList.remove('opacity-0');
+          }, 120);
+        }
 
-                // Default
-                setActiveTab('municipalidades');
-                render('municipalidades');
-            });
-        </script>
-    </section>
+        tabs.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            setActiveTab(category);
+            render(category);
+          });
+        });
 
-    {{-- ORGULLO ACADÉMICO (EXALUMNOS) --}}
-<section class="py-24 bg-black text-white" id="equipo">
+        setActiveTab('municipalidades');
+        render('municipalidades');
+      });
+    </script>
+</section>
+
+{{-- ORGULLO ACADÉMICO (EXALUMNOS) --}}
+<section class="py-24 lg:py-28 bg-black text-white" id="equipo">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
@@ -441,7 +363,6 @@
                 </p>
             </div>
 
-            {{-- Controles carrusel --}}
             <div class="hidden md:flex gap-2">
                 <button id="alumniPrev"
                         class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-gray-700"
@@ -457,10 +378,7 @@
             </div>
         </div>
 
-        {{-- Carrusel --}}
-        <div id="alumniCarousel"
-             class="flex overflow-x-auto hide-scrollbar gap-6 pb-6 snap-x snap-proximity scroll-smooth">
-
+        <div id="alumniCarousel" class="flex overflow-x-auto hide-scrollbar gap-6 pb-6 snap-x snap-proximity scroll-smooth">
             {{-- 1 --}}
             <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
                 <div class="group relative">
@@ -654,89 +572,94 @@
                     </p>
                 </div>
             </div>
-
         </div>
     </div>
 
-    {{-- Script carrusel: movimiento lento + botones (igual estilo Proyectos) --}}
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.getElementById('alumniCarousel');
-            const prevBtn = document.getElementById('alumniPrev');
-            const nextBtn = document.getElementById('alumniNext');
-            if (!carousel || !prevBtn || !nextBtn) return;
+      document.addEventListener('DOMContentLoaded', () => {
+        const carousel = document.getElementById('alumniCarousel');
+        const prevBtn = document.getElementById('alumniPrev');
+        const nextBtn = document.getElementById('alumniNext');
+        if (!carousel || !prevBtn || !nextBtn) return;
 
-            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            const getStep = () => {
-                const first = carousel.querySelector('.alumni-card');
-                if (!first) return 0;
+        const getStep = () => {
+          const first = carousel.querySelector('.alumni-card');
+          if (!first) return 0;
+          const styles = getComputedStyle(carousel);
+          const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+          return first.getBoundingClientRect().width + gap;
+        };
 
-                const styles = getComputedStyle(carousel);
-                const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+        const updateNav = () => {
+          const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+          prevBtn.disabled = carousel.scrollLeft <= 2;
+          nextBtn.disabled = carousel.scrollLeft >= (maxScroll - 2);
+        };
 
-                return first.getBoundingClientRect().width + gap;
-            };
+        let timer = null;
+        let paused = false;
+        let pauseTimer = null;
+        const INTERVAL = 6000;
 
-            const updateNav = () => {
-                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-                prevBtn.disabled = carousel.scrollLeft <= 2;
-                nextBtn.disabled = carousel.scrollLeft >= (maxScroll - 2);
-            };
+        function pauseAuto(ms = 3500) {
+          paused = true;
+          clearTimeout(pauseTimer);
+          pauseTimer = setTimeout(() => (paused = false), ms);
+        }
 
-            let timer = null;
-            let paused = false;
-            let pauseTimer = null;
-
-            const INTERVAL = 6000; // más alto = más lento
-
-            function pauseAuto(ms = 3500) {
-                paused = true;
-                clearTimeout(pauseTimer);
-                pauseTimer = setTimeout(() => (paused = false), ms);
-            }
-
-            prevBtn.addEventListener('click', () => {
-                pauseAuto();
-                carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
-            });
-
-            nextBtn.addEventListener('click', () => {
-                pauseAuto();
-                carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
-            });
-
-            function startAuto() {
-                if (prefersReduced) return;
-                if (timer) return;
-
-                timer = setInterval(() => {
-                    if (paused || document.hidden) return;
-
-                    const step = getStep();
-                    if (!step) return;
-
-                    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-
-                    if (carousel.scrollLeft >= maxScroll - 2) {
-                        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        carousel.scrollBy({ left: step, behavior: 'smooth' });
-                    }
-                }, INTERVAL);
-            }
-
-            carousel.addEventListener('mouseenter', () => (paused = true));
-            carousel.addEventListener('mouseleave', () => (paused = false));
-            carousel.addEventListener('wheel', () => pauseAuto(4000), { passive: true });
-            carousel.addEventListener('touchstart', () => pauseAuto(5000), { passive: true });
-
-            carousel.addEventListener('scroll', updateNav, { passive: true });
-            window.addEventListener('resize', updateNav);
-
-            updateNav();
-            startAuto();
+        prevBtn.addEventListener('click', () => {
+          pauseAuto();
+          carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
         });
+
+        nextBtn.addEventListener('click', () => {
+          pauseAuto();
+          carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
+        });
+
+        function startAuto() {
+          if (prefersReduced) return;
+          if (timer) return;
+
+          timer = setInterval(() => {
+            if (paused || document.hidden) return;
+
+            const step = getStep();
+            if (!step) return;
+
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+            if (carousel.scrollLeft >= maxScroll - 2) {
+              carousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              carousel.scrollBy({ left: step, behavior: 'smooth' });
+            }
+          }, INTERVAL);
+        }
+
+        carousel.addEventListener('mouseenter', () => (paused = true));
+        carousel.addEventListener('mouseleave', () => (paused = false));
+        carousel.addEventListener('wheel', () => pauseAuto(4000), { passive: true });
+        carousel.addEventListener('touchstart', () => pauseAuto(5000), { passive: true });
+
+        carousel.addEventListener('scroll', updateNav, { passive: true });
+        window.addEventListener('resize', updateNav);
+
+        updateNav();
+        startAuto();
+      });
     </script>
 </section>
+
+{{-- Hash scroll helper (opcional) --}}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+    }
+  });
+</script>
 @endsection

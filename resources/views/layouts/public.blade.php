@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,13 +17,31 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
+
+    {{-- Scroll offset perfecto para header fijo --}}
+    <style>
+        :root { --nav-h: 80px; } /* header h-20 = 80px */
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-h) + 18px);
+        }
+
+        section[id] {
+            scroll-margin-top: calc(var(--nav-h) + 18px);
+        }
+
+        @media (min-width: 1024px) {
+            html { scroll-padding-top: calc(var(--nav-h) + 28px); }
+            section[id] { scroll-margin-top: calc(var(--nav-h) + 28px); }
+        }
+    </style>
 </head>
 
-<body class="bg-white text-black selection:bg-primary selection:text-white min-h-screen">
-
+<body class="min-h-screen bg-background-dark text-white selection:bg-primary selection:text-white overflow-x-hidden">
     @include('partials.header')
 
-    <main class="bg-white">
+    <main class="min-h-[calc(100vh-80px)]">
         @yield('content')
     </main>
 
