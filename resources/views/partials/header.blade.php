@@ -9,15 +9,20 @@
             </div>
 
             <nav class="hidden md:flex space-x-8">
-                <a class="text-gray-300 hover:text-primary font-medium transition-colors" href="#nosotros">Nosotros</a>
-                <a class="text-gray-300 hover:text-primary font-medium transition-colors" href="#proyectos">Proyectos</a>
-                <a class="text-gray-300 hover:text-primary font-medium transition-colors" href="#aliados">Aliados</a>
-                <a class="text-gray-300 hover:text-primary font-medium transition-colors" href="#equipo">Equipo</a>
+                <a class="text-gray-300 hover:text-primary font-medium transition-colors" href="{{ route('home') }}#nosotros">Nosotros</a>
+
+                {{-- ✅ Ruta al index de proyectos --}}
+                <a class="text-gray-300 hover:text-primary font-medium transition-colors" href="{{ route('proyectos.index') }}">
+                    Proyectos
+                </a>
+
+                <a class="text-gray-300 hover:text-primary font-medium transition-colors" href="{{ route('home') }}#aliados">Aliados</a>
+                <a class="text-gray-300 hover:text-primary font-medium transition-colors" href="{{ route('home') }}#equipo">Equipo</a>
             </nav>
 
             <div class="hidden md:flex items-center">
                 <a class="inline-flex items-center justify-center px-6 py-2 border border-primary text-sm font-bold uppercase tracking-wider rounded text-primary hover:bg-primary hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-                   href="#contacto">
+                   href="{{ route('home') }}#contacto">
                     Contactar
                 </a>
             </div>
@@ -34,11 +39,17 @@
         {{-- Menú móvil --}}
         <div data-mobile-menu class="md:hidden hidden pb-4">
             <div class="mt-2 grid gap-2 rounded-xl border border-gray-800 bg-background-dark/95 p-3">
-                <a class="px-3 py-2 rounded-lg text-gray-200 hover:bg-white/5" href="#nosotros">Nosotros</a>
-                <a class="px-3 py-2 rounded-lg text-gray-200 hover:bg-white/5" href="#proyectos">Proyectos</a>
-                <a class="px-3 py-2 rounded-lg text-gray-200 hover:bg-white/5" href="#aliados">Aliados</a>
-                <a class="px-3 py-2 rounded-lg text-gray-200 hover:bg-white/5" href="#equipo">Equipo</a>
-                <a class="px-3 py-2 rounded-lg text-primary font-bold hover:bg-primary/10" href="#contacto">Contactar</a>
+                <a class="px-3 py-2 rounded-lg text-gray-200 hover:bg-white/5" href="{{ route('home') }}#nosotros">Nosotros</a>
+
+                {{-- ✅ Ruta al index de proyectos --}}
+                <a class="text-gray-300 hover:text-primary font-medium transition-colors"
+                    href="{{ route('proyectos.index') }}">
+                    Proyectos
+                </a>
+
+                <a class="px-3 py-2 rounded-lg text-gray-200 hover:bg-white/5" href="{{ route('home') }}#aliados">Aliados</a>
+                <a class="px-3 py-2 rounded-lg text-gray-200 hover:bg-white/5" href="{{ route('home') }}#equipo">Equipo</a>
+                <a class="px-3 py-2 rounded-lg text-primary font-bold hover:bg-primary/10" href="{{ route('home') }}#contacto">Contactar</a>
             </div>
         </div>
     </div>
