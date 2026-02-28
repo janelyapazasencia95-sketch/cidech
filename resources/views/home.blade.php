@@ -10,6 +10,17 @@
          pb-22
          min-h-[calc(100svh-var(--nav-h)-40px)] lg:min-h-[calc(100svh-var(--nav-h)-40px)]">
 
+    <!-- IMAGEN DE FONDO -->
+    <div class="absolute inset-0">
+        <img src="{{ asset('img/portada.png') }}"
+             class="w-full h-full object-cover"
+             alt="Portada">
+    </div>
+    <!-- OVERLAY OSCURO (para que el texto se vea bien) -->
+    <div class="absolute inset-0 bg-black/70"></div>
+    <!-- CONTENIDO -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+
   <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
   <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -36,10 +47,10 @@
           </span>
         </h1>
 
-        <p class="mt-6 max-w-2xl text-[clamp(1.05rem,1.3vw,1.35rem)] text-gray-400 font-light border-l-4 border-primary pl-6 leading-relaxed">
-          Mejores en resultados académicos y formación de valores.
-          Transformamos estudiantes en líderes con impacto real en su futuro.
-        </p>
+           <p class="mt-6 max-w-2xl text-[clamp(1.05rem,1.3vw,1.35rem)] text-white font-light border-l-4 border-primary pl-6 leading-relaxed">
+            Mejores en resultados académicos y formación de valores.
+            Transformamos estudiantes en líderes con impacto real en su futuro.
+           </p>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-5">
           <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded bg-primary text-white hover:bg-primary-hover shadow-[0_0_20px_rgba(239,35,60,0.4)] hover:shadow-[0_0_30px_rgba(239,35,60,0.6)] transition-all duration-300 transform hover:-translate-y-1"
