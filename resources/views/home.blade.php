@@ -66,33 +66,6 @@
         </div>
       </div>
 
-      {{-- DERECHA --}}
-      <div class="lg:col-span-4 flex flex-col gap-10 lg:border-l lg:border-gray-800 lg:pl-12 mt-10 lg:mt-0">
-        <div class="group">
-          <p class="font-black text-white group-hover:text-primary transition-colors duration-300 text-[clamp(2.4rem,4.2vw,4.2rem)]">
-            +50
-          </p>
-          <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Proyectos Ejecutados</p>
-        </div>
-
-        <div class="w-full h-px bg-gray-800 lg:hidden"></div>
-
-        <div class="group">
-          <p class="font-black text-white group-hover:text-primary transition-colors duration-300 text-[clamp(2.4rem,4.2vw,4.2rem)]">
-            +30
-          </p>
-          <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Aliados Estratégicos</p>
-        </div>
-
-        <div class="w-full h-px bg-gray-800 lg:hidden"></div>
-
-        <div class="group">
-          <p class="font-black text-white group-hover:text-primary transition-colors duration-300 text-[clamp(2.8rem,4.6vw,4.6rem)]">
-            100%
-          </p>
-          <p class="text-sm uppercase tracking-widest text-gray-500 font-semibold mt-2">Cobertura Nacional</p>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -255,112 +228,188 @@
 </section>
 
 {{-- ALIADOS --}}
-<section class="py-24 lg:py-28 bg-surface-dark" id="aliados">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 font-display">Red de Convenios Institucionales</h2>
-        <p class="max-w-2xl mx-auto text-xl text-gray-400 mb-12">
-            Unimos fuerzas con las instituciones más importantes del país.
-        </p>
+<section class="py-24 lg:py-28 bg-surface-dark border-b border-gray-800" id="aliados">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="flex flex-wrap justify-center gap-4 mb-16">
-            <button class="ally-tab px-8 py-3 rounded-full bg-primary text-white font-bold tracking-wide shadow-lg shadow-primary/30 transform hover:scale-105 transition-all"
-                    type="button" data-category="municipalidades" aria-pressed="true">
+        {{-- HEADER --}}
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <span class="text-primary font-bold uppercase tracking-widest mb-2 block">
+                    Convenios
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white font-display">
+                    Red de Convenios Institucionales
+                </h2>
+                <p class="text-gray-500 mt-4 max-w-2xl">
+                    Unimos fuerzas con las instituciones más importantes del país.
+                </p>
+            </div>
+
+            {{-- Flechas --}}
+            <div class="hidden md:flex gap-2">
+                <button id="alliesPrev"
+                    class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-gray-700"
+                    type="button">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+
+                <button id="alliesNext"
+                    class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-gray-700"
+                    type="button">
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+
+        {{-- BOTONES --}}
+        <div class="flex flex-wrap gap-4 mb-10">
+            <button class="ally-tab px-6 py-3 rounded-full bg-primary text-white font-bold tracking-wide shadow-lg shadow-primary/30 transition-all"
+                    data-category="municipalidades">
                 MUNICIPALIDADES
             </button>
 
-            <button class="ally-tab px-8 py-3 rounded-full bg-transparent border border-gray-600 text-gray-300 font-medium hover:border-white hover:text-white transition-all"
-                    type="button" data-category="colegios" aria-pressed="false">
+            <button class="ally-tab px-6 py-3 rounded-full border border-gray-600 text-gray-300 font-medium hover:border-white hover:text-white transition-all"
+                    data-category="colegios">
                 COLEGIOS
             </button>
 
-            <button class="ally-tab px-8 py-3 rounded-full bg-transparent border border-gray-600 text-gray-300 font-medium hover:border-white hover:text-white transition-all"
-                    type="button" data-category="institutos" aria-pressed="false">
+            <button class="ally-tab px-6 py-3 rounded-full border border-gray-600 text-gray-300 font-medium hover:border-white hover:text-white transition-all"
+                    data-category="institutos">
                 INSTITUTOS
             </button>
         </div>
 
-        <div id="alliesGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"></div>
+        {{-- CARRUSEL --}}
+        <div id="alliesCarousel"
+             class="flex overflow-x-auto hide-scrollbar gap-6 pb-8 snap-x snap-proximity scroll-smooth">
+        </div>
+
     </div>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const grid = document.getElementById('alliesGrid');
-        const tabs = Array.from(document.querySelectorAll('.ally-tab'));
-
-        const ALLIES = {
-          municipalidades: [
-            { name: 'MUNI 1', src: "{{ asset('img/aliados/municipalidades/muni-01.png') }}" },
-            { name: 'MUNI 2', src: "{{ asset('img/aliados/municipalidades/muni-02.png') }}" },
-            { name: 'MUNI 3', src: "{{ asset('img/aliados/municipalidades/muni-03.png') }}" },
-            { name: 'MUNI 4', src: "{{ asset('img/aliados/municipalidades/muni-04.png') }}" },
-            { name: 'MUNI 5', src: "{{ asset('img/aliados/municipalidades/muni-05.png') }}" },
-            { name: 'MUNI 6', src: "{{ asset('img/aliados/municipalidades/muni-06.png') }}" },
-          ],
-          colegios: [
-            { name: 'COLEGIO 1', src: "{{ asset('img/aliados/colegios/col-01.png') }}" },
-            { name: 'COLEGIO 2', src: "{{ asset('img/aliados/colegios/col-02.png') }}" },
-            { name: 'COLEGIO 3', src: "{{ asset('img/aliados/colegios/col-03.png') }}" },
-            { name: 'COLEGIO 4', src: "{{ asset('img/aliados/colegios/col-04.png') }}" },
-            { name: 'COLEGIO 5', src: "{{ asset('img/aliados/colegios/col-05.png') }}" },
-            { name: 'COLEGIO 6', src: "{{ asset('img/aliados/colegios/col-06.png') }}" },
-          ],
-          institutos: [
-            { name: 'INSTITUTO 1', src: "{{ asset('img/aliados/institutos/ins-01.png') }}" },
-            { name: 'INSTITUTO 2', src: "{{ asset('img/aliados/institutos/ins-02.png') }}" },
-            { name: 'INSTITUTO 3', src: "{{ asset('img/aliados/institutos/ins-03.png') }}" },
-            { name: 'INSTITUTO 4', src: "{{ asset('img/aliados/institutos/ins-04.png') }}" },
-            { name: 'INSTITUTO 5', src: "{{ asset('img/aliados/institutos/ins-05.png') }}" },
-            { name: 'INSTITUTO 6', src: "{{ asset('img/aliados/institutos/ins-06.png') }}" },
-          ],
-        };
-
-        function setActiveTab(category) {
-          tabs.forEach(btn => {
-            const isActive = btn.dataset.category === category;
-            btn.setAttribute('aria-pressed', String(isActive));
-
-            if (isActive) {
-              btn.classList.add('bg-primary', 'text-white', 'font-bold', 'shadow-lg', 'shadow-primary/30');
-              btn.classList.remove('bg-transparent', 'border', 'border-gray-600', 'text-gray-300', 'font-medium');
-            } else {
-              btn.classList.remove('bg-primary', 'text-white', 'font-bold', 'shadow-lg', 'shadow-primary/30');
-              btn.classList.add('bg-transparent', 'border', 'border-gray-600', 'text-gray-300', 'font-medium');
-            }
-          });
-        }
-
-        function render(category) {
-          const items = ALLIES[category] || [];
-
-          grid.classList.add('opacity-0', 'transition-opacity', 'duration-200');
-
-          setTimeout(() => {
-            grid.innerHTML = items.map(item => `
-              <div class="ally-card h-32 bg-background-dark border border-gray-800 rounded-lg flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:border-primary transition-all duration-300 group overflow-hidden">
-                <img src="${item.src}" alt="${item.name}" loading="lazy"
-                     class="w-full h-full object-contain p-4"
-                     onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');" />
-                <span class="hidden text-sm font-bold text-gray-500 group-hover:text-primary px-2">${item.name}</span>
-              </div>
-            `).join('');
-
-            grid.classList.remove('opacity-0');
-          }, 120);
-        }
-
-        tabs.forEach(btn => {
-          btn.addEventListener('click', () => {
-            const category = btn.dataset.category;
-            setActiveTab(category);
-            render(category);
-          });
-        });
-
-        setActiveTab('municipalidades');
-        render('municipalidades');
-      });
-    </script>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const carousel = document.getElementById('alliesCarousel');
+  const prevBtn = document.getElementById('alliesPrev');
+  const nextBtn = document.getElementById('alliesNext');
+  const tabs = Array.from(document.querySelectorAll('.ally-tab'));
+
+  const ALLIES = {
+    municipalidades: [
+      { name: 'MUNI 1', src: "{{ asset('img/aliados/municipalidades/muni-01.png') }}" },
+      { name: 'MUNI 2', src: "{{ asset('img/aliados/municipalidades/muni-02.png') }}" },
+      { name: 'MUNI 3', src: "{{ asset('img/aliados/municipalidades/muni-03.png') }}" },
+      { name: 'MUNI 4', src: "{{ asset('img/aliados/municipalidades/muni-04.png') }}" },
+      { name: 'MUNI 5', src: "{{ asset('img/aliados/municipalidades/muni-05.png') }}" },
+      { name: 'MUNI 6', src: "{{ asset('img/aliados/municipalidades/muni-06.png') }}" },
+    ],
+    colegios: [
+      { name: 'COLEGIO 1', src: "{{ asset('img/aliados/colegios/col-01.png') }}" },
+      { name: 'COLEGIO 2', src: "{{ asset('img/aliados/colegios/col-02.png') }}" },
+      { name: 'COLEGIO 3', src: "{{ asset('img/aliados/colegios/col-03.png') }}" },
+      { name: 'COLEGIO 4', src: "{{ asset('img/aliados/colegios/col-04.png') }}" },
+      { name: 'COLEGIO 5', src: "{{ asset('img/aliados/colegios/col-05.png') }}" },
+      { name: 'COLEGIO 6', src: "{{ asset('img/aliados/colegios/col-06.png') }}" },
+    ],
+    institutos: [
+      { name: 'INSTITUTO 1', src: "{{ asset('img/aliados/institutos/ins-01.png') }}" },
+      { name: 'INSTITUTO 2', src: "{{ asset('img/aliados/institutos/ins-02.png') }}" },
+      { name: 'INSTITUTO 3', src: "{{ asset('img/aliados/institutos/ins-03.png') }}" },
+      { name: 'INSTITUTO 4', src: "{{ asset('img/aliados/institutos/ins-04.png') }}" },
+      { name: 'INSTITUTO 5', src: "{{ asset('img/aliados/institutos/ins-05.png') }}" },
+      { name: 'INSTITUTO 6', src: "{{ asset('img/aliados/institutos/ins-06.png') }}" },
+    ],
+  };
+
+  function render(category) {
+    const items = ALLIES[category] || [];
+
+    carousel.innerHTML = items.map(item => `
+      <div class="ally-card 
+          min-w-[85vw] 
+          sm:min-w-[420px] 
+          md:min-w-[420px] 
+          lg:min-w-[420px] 
+          xl:min-w-[460px] 
+          2xl:min-w-[520px] 
+          h-[280px] 
+          md:h-[320px] 
+          xl:h-[340px] 
+          snap-center">
+
+        <div class="h-full bg-background-dark border border-gray-800 rounded-2xl 
+                    flex items-center justify-center 
+                    grayscale opacity-70 hover:grayscale-0 hover:opacity-100 
+                    hover:border-primary transition-all duration-300 
+                    overflow-hidden group">
+
+            <img src="${item.src}" 
+                 alt="${item.name}" 
+                 loading="lazy"
+                 class="w-full h-full object-contain p-10 
+                        transition-transform duration-500 
+                        group-hover:scale-105" />
+        </div>
+      </div>
+    `).join('');
+
+    updateNav();
+  }
+
+  function setActive(category) {
+    tabs.forEach(btn => {
+      const active = btn.dataset.category === category;
+
+      btn.classList.toggle('bg-primary', active);
+      btn.classList.toggle('text-white', active);
+      btn.classList.toggle('shadow-lg', active);
+      btn.classList.toggle('shadow-primary/30', active);
+
+      btn.classList.toggle('border', !active);
+      btn.classList.toggle('border-gray-600', !active);
+      btn.classList.toggle('text-gray-300', !active);
+    });
+  }
+
+  function getStep() {
+    const first = carousel.querySelector('.ally-card');
+    if (!first) return 0;
+    const gap = parseFloat(getComputedStyle(carousel).gap || 0);
+    return first.getBoundingClientRect().width + gap;
+  }
+
+  function updateNav() {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    prevBtn.disabled = carousel.scrollLeft <= 2;
+    nextBtn.disabled = carousel.scrollLeft >= (maxScroll - 2);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
+  });
+
+  carousel.addEventListener('scroll', updateNav, { passive: true });
+  window.addEventListener('resize', updateNav);
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category;
+      setActive(category);
+      render(category);
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    });
+  });
+
+  setActive('municipalidades');
+  render('municipalidades');
+
+});
+</script>
 
 {{-- ORGULLO ACADÉMICO (EXALUMNOS) --}}
 <section class="py-24 lg:py-28 bg-black text-white" id="equipo">
