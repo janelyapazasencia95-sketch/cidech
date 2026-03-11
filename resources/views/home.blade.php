@@ -13,6 +13,16 @@
     --cidech-muted: #64748b;
     --cidech-border: rgba(15, 23, 42, 0.08);
     --cidech-border-red: rgba(239, 35, 60, 0.16);
+
+    --section-y: clamp(5rem, 7vw, 6.75rem);
+    --section-gap: clamp(2.5rem, 4vw, 3.5rem);
+
+    --nav-btn-size: 3rem;
+    --cta-h: 3.5rem;
+    --rail-gap: 1.5rem;
+
+    --project-card-h: clamp(27rem, 52vw, 31.5rem);
+    --logo-card-h: clamp(14rem, 28vw, 18rem);
   }
 
   body{
@@ -38,7 +48,17 @@
   }
 
   .cidech-divider{
-    background: linear-gradient(to right, transparent, rgba(239,35,60,.45), transparent);
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(239,35,60,.16) 18%,
+      rgba(239,35,60,.74) 50%,
+      rgba(239,35,60,.16) 82%,
+      transparent 100%
+    );
+    box-shadow:
+      0 0 14px rgba(239,35,60,.18),
+      0 0 28px rgba(239,35,60,.08);
   }
 
   .cidech-card{
@@ -51,6 +71,158 @@
     background: var(--cidech-card);
     border: 1px solid var(--cidech-border-red);
     box-shadow: 0 14px 36px rgba(239, 35, 60, 0.06);
+  }
+
+  .section-shell{
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
+  }
+
+  .section-header{
+    margin-bottom: var(--section-gap);
+  }
+
+  .section-kicker{
+    color: #EF233C;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .8rem;
+    margin-bottom: .75rem;
+    display: block;
+  }
+
+  .section-title{
+    font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+    line-height: 1.02;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .section-copy{
+    color: #64748b;
+    margin-top: 1rem;
+    max-width: 42rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .carousel-rail{
+    gap: var(--rail-gap);
+    padding-bottom: 1.75rem;
+    scroll-padding-inline: 1rem;
+  }
+
+  @media (min-width: 640px){
+    .carousel-rail{ scroll-padding-inline: 1.5rem; }
+  }
+
+  @media (min-width: 1024px){
+    .carousel-rail{ scroll-padding-inline: 2rem; }
+  }
+
+  .carousel-nav-btn{
+    width: var(--nav-btn-size);
+    height: var(--nav-btn-size);
+    border-radius: 999px;
+    border: 1px solid rgb(226 232 240);
+    background: rgba(255,255,255,.95);
+    color: #1e293b;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s ease;
+    box-shadow: 0 10px 24px rgba(15,23,42,.05);
+  }
+
+  .carousel-nav-btn:hover{
+    background: #EF233C;
+    border-color: #EF233C;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .carousel-nav-btn:disabled{
+    opacity: .4;
+    transform: none;
+    background: rgba(255,255,255,.95);
+    border-color: rgb(226 232 240);
+    color: #1e293b;
+  }
+
+  .pill-tab{
+    min-height: 3rem;
+    padding: .75rem 1.3rem;
+    border-radius: 999px;
+    border: 1px solid rgb(203 213 225);
+    background: rgba(255,255,255,.94);
+    color: #475569;
+    font-weight: 600;
+    font-size: .9rem;
+    transition: all .2s ease;
+    box-shadow: 0 8px 22px rgba(15,23,42,.04);
+  }
+
+  .pill-tab:hover{
+    border-color: rgba(239,35,60,.45);
+    color: #EF233C;
+  }
+
+  .pill-tab.active{
+    background: #EF233C;
+    border-color: #EF233C;
+    color: white;
+    box-shadow: 0 12px 28px rgba(239,35,60,.18);
+  }
+
+  .project-card-shell{
+    min-width: 88vw;
+    height: var(--project-card-h);
+  }
+
+  @media (min-width: 640px){
+    .project-card-shell{ min-width: 78vw; }
+  }
+
+  @media (min-width: 768px){
+    .project-card-shell{ min-width: 34rem; }
+  }
+
+  @media (min-width: 1024px){
+    .project-card-shell{ min-width: 38rem; }
+  }
+
+  .logo-card-shell{
+    min-width: 80vw;
+    height: var(--logo-card-h);
+  }
+
+  @media (min-width: 640px){
+    .logo-card-shell{ min-width: 21rem; }
+  }
+
+  @media (min-width: 768px){
+    .logo-card-shell{ min-width: 22.5rem; }
+  }
+
+  @media (min-width: 1280px){
+    .logo-card-shell{ min-width: 25rem; }
+  }
+
+  .alumni-card-shell{
+    min-width: 80vw;
+  }
+
+  @media (min-width: 640px){
+    .alumni-card-shell{ min-width: 20rem; }
+  }
+
+  @media (min-width: 768px){
+    .alumni-card-shell{ min-width: 22rem; }
+  }
+
+  @media (min-width: 1280px){
+    .alumni-card-shell{ min-width: 24rem; }
   }
 </style>
 @endpush
@@ -135,7 +307,7 @@
 </section>
 
 {{-- PROYECTOS --}}
-<section class="py-24 lg:py-20 cidech-light-surface border-b border-primary/10" id="proyectos">
+<section class="section-shell cidech-light-surface border-b border-primary/10" id="proyectos">
     @php
         $fallback = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80';
         $img = function ($path, $fallback) {
@@ -144,63 +316,61 @@
         };
     @endphp
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex justify-between items-end">
-        <div>
-            <p class="text-primary font-bold uppercase tracking-widest mb-2">Nuestro Trabajo</p>
-            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 font-display">Proyectos en Acción</h2>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-header flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <span class="section-kicker">Nuestro Trabajo</span>
+                <h2 class="section-title font-display">Proyectos en Acción</h2>
+            </div>
+
+            <div class="hidden md:flex gap-2">
+                <button id="projectsPrev" class="carousel-nav-btn" type="button" aria-label="Anterior">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+
+                <button id="projectsNext" class="carousel-nav-btn" type="button" aria-label="Siguiente">
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
         </div>
 
-        <div class="hidden md:flex gap-2">
-            <button id="projectsPrev"
-                class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-800 hover:bg-primary hover:border-primary hover:text-white transition-all disabled:opacity-40 disabled:hover:bg-white disabled:hover:border-slate-200 disabled:hover:text-slate-800"
-                type="button" aria-label="Anterior">
-                <span class="material-symbols-outlined">arrow_back</span>
-            </button>
+        <div id="projectsCarousel"
+             class="carousel-rail flex overflow-x-auto hide-scrollbar px-4 sm:px-6 lg:px-8 snap-x snap-proximity scroll-smooth">
 
-            <button id="projectsNext"
-                class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-800 hover:bg-primary hover:border-primary hover:text-white transition-all disabled:opacity-40 disabled:hover:bg-white disabled:hover:border-slate-200 disabled:hover:text-slate-800"
-                type="button" aria-label="Siguiente">
-                <span class="material-symbols-outlined">arrow_forward</span>
-            </button>
-        </div>
-    </div>
+            @forelse(($projects ?? collect())->take(5) as $p)
+                <a href="{{ route('proyectos.show', $p) }}"
+                   class="project-card project-card-shell relative rounded-[1.75rem] overflow-hidden group snap-center cursor-pointer block border border-primary/10 hover:border-primary/30 transition-all shadow-[0_14px_40px_rgba(15,23,42,0.08)]">
 
-    <div id="projectsCarousel"
-         class="flex overflow-x-auto hide-scrollbar gap-6 px-4 sm:px-6 lg:px-8 pb-8 snap-x snap-proximity scroll-smooth">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                         src="{{ $img($p->imagen ?? null, $fallback) }}"
+                         alt="{{ $p->titulo }}" />
 
-        @forelse(($projects ?? collect())->take(5) as $p)
-            <a href="{{ route('proyectos.show', $p) }}"
-               class="project-card min-w-[85vw] md:min-w-[600px] h-[500px] relative rounded-2xl overflow-hidden group snap-center cursor-pointer block border border-primary/10 hover:border-primary/30 transition-all shadow-[0_14px_40px_rgba(15,23,42,0.08)]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent"></div>
 
-                <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                     src="{{ $img($p->imagen ?? null, $fallback) }}"
-                     alt="{{ $p->titulo }}" />
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <span class="inline-block px-3 py-1 bg-primary/15 backdrop-blur-md border border-primary/25 text-white text-xs font-bold uppercase tracking-wider rounded mb-4">
+                            {{ $p->estado ?? 'En curso' }}
+                        </span>
 
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent opacity-90"></div>
-                <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent"></div>
+                        <h3 class="text-3xl font-bold text-white mb-2 group-hover:text-primary transition-colors font-display">
+                            {{ $p->titulo }}
+                        </h3>
 
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                    <span class="inline-block px-3 py-1 bg-primary/15 backdrop-blur-md border border-primary/25 text-white text-xs font-bold uppercase tracking-wider rounded mb-4">
-                        {{ $p->estado ?? 'En curso' }}
-                    </span>
+                        <p class="text-gray-200 mb-6 line-clamp-2">
+                            {{ \Illuminate\Support\Str::limit($p->descripcion ?? '', 140) }}
+                        </p>
 
-                    <h3 class="text-3xl font-bold text-white mb-2 group-hover:text-primary transition-colors font-display">
-                        {{ $p->titulo }}
-                    </h3>
-
-                    <p class="text-gray-200 mb-6 line-clamp-2">
-                        {{ \Illuminate\Support\Str::limit($p->descripcion ?? '', 140) }}
-                    </p>
-
-                    <div class="flex items-center text-sm font-medium text-white/85">
-                        <span class="material-symbols-outlined mr-2 text-primary">location_on</span>
-                        {{ $p->ubicacion ?? 'Perú' }}
+                        <div class="flex items-center text-sm font-medium text-white/85">
+                            <span class="material-symbols-outlined mr-2 text-primary">location_on</span>
+                            {{ $p->ubicacion ?? 'Perú' }}
+                        </div>
                     </div>
-                </div>
-            </a>
-        @empty
-            <div class="w-full text-center text-slate-500 py-12">Aún no hay proyectos publicados.</div>
-        @endforelse
+                </a>
+            @empty
+                <div class="w-full text-center text-slate-500 py-12">Aún no hay proyectos publicados.</div>
+            @endforelse
+        </div>
     </div>
 
     <script>
@@ -282,59 +452,37 @@
 </section>
 
 {{-- ALIADOS --}}
-<section class="py-24 lg:py-28 cidech-light-surface-soft border-b border-primary/10" id="aliados">
+<section class="section-shell cidech-light-surface-soft border-b border-primary/10" id="aliados">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {{-- HEADER --}}
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div class="section-header flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-                <span class="text-primary font-bold uppercase tracking-widest mb-2 block">
-                    Convenios
-                </span>
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 font-display">
-                    Red de Convenios Institucionales
-                </h2>
-                <p class="text-slate-600 mt-4 max-w-2xl">
+                <span class="section-kicker">Convenios</span>
+                <h2 class="section-title font-display">Red de Convenios Institucionales</h2>
+                <p class="section-copy">
                     Unimos fuerzas con las instituciones más importantes del país.
                 </p>
             </div>
 
             <div class="hidden md:flex gap-2">
-                <button id="alliesPrev"
-                    class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-800 hover:bg-primary hover:border-primary hover:text-white transition-all disabled:opacity-40 disabled:hover:bg-white disabled:hover:border-slate-200 disabled:hover:text-slate-800"
-                    type="button">
+                <button id="alliesPrev" class="carousel-nav-btn" type="button">
                     <span class="material-symbols-outlined">arrow_back</span>
                 </button>
 
-                <button id="alliesNext"
-                    class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-800 hover:bg-primary hover:border-primary hover:text-white transition-all disabled:opacity-40 disabled:hover:bg-white disabled:hover:border-slate-200 disabled:hover:text-slate-800"
-                    type="button">
+                <button id="alliesNext" class="carousel-nav-btn" type="button">
                     <span class="material-symbols-outlined">arrow_forward</span>
                 </button>
             </div>
         </div>
 
-        {{-- BOTONES --}}
-        <div class="flex flex-wrap gap-4 mb-10">
-            <button class="ally-tab px-6 py-3 rounded-full bg-primary text-white font-bold tracking-wide shadow-lg shadow-primary/20 transition-all"
-                    data-category="municipalidades">
-                MUNICIPALIDADES
-            </button>
-
-            <button class="ally-tab px-6 py-3 rounded-full border border-slate-300 bg-white text-slate-700 font-medium hover:border-primary hover:text-primary transition-all"
-                    data-category="colegios">
-                COLEGIOS
-            </button>
-
-            <button class="ally-tab px-6 py-3 rounded-full border border-slate-300 bg-white text-slate-700 font-medium hover:border-primary hover:text-primary transition-all"
-                    data-category="institutos">
-                INSTITUTOS
-            </button>
+        <div class="flex flex-wrap gap-3 mb-10">
+            <button class="ally-tab pill-tab active" data-category="municipalidades">MUNICIPALIDADES</button>
+            <button class="ally-tab pill-tab" data-category="colegios">COLEGIOS</button>
+            <button class="ally-tab pill-tab" data-category="institutos">INSTITUTOS</button>
         </div>
 
-        {{-- CARRUSEL --}}
         <div id="alliesCarousel"
-             class="flex overflow-x-auto hide-scrollbar gap-6 pb-8 snap-x snap-proximity scroll-smooth">
+             class="carousel-rail flex overflow-x-auto hide-scrollbar snap-x snap-proximity scroll-smooth">
         </div>
     </div>
 </section>
@@ -378,29 +526,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = ALLIES[category] || [];
 
     carousel.innerHTML = items.map(item => `
-      <div class="ally-card 
-          min-w-[85vw] 
-          sm:min-w-[420px] 
-          md:min-w-[420px] 
-          lg:min-w-[420px] 
-          xl:min-w-[460px] 
-          2xl:min-w-[520px] 
-          h-[280px] 
-          md:h-[320px] 
-          xl:h-[340px] 
-          snap-center">
-
-        <div class="h-full bg-white border border-slate-200 rounded-2xl 
-                    flex items-center justify-center 
-                    grayscale opacity-80 hover:grayscale-0 hover:opacity-100 
-                    hover:border-primary/40 transition-all duration-300 
+      <div class="ally-card logo-card-shell snap-center">
+        <div class="h-full bg-white border border-slate-200 rounded-[1.5rem]
+                    flex items-center justify-center
+                    grayscale opacity-80 hover:grayscale-0 hover:opacity-100
+                    hover:border-primary/40 transition-all duration-300
                     overflow-hidden group shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
 
-            <img src="${item.src}" 
-                 alt="${item.name}" 
+            <img src="${item.src}"
+                 alt="${item.name}"
                  loading="lazy"
-                 class="w-full h-full object-contain p-10 
-                        transition-transform duration-500 
+                 class="w-full h-full object-contain p-8 sm:p-10
+                        transition-transform duration-500
                         group-hover:scale-105" />
         </div>
       </div>
@@ -412,16 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function setActive(category) {
     tabs.forEach(btn => {
       const active = btn.dataset.category === category;
-
-      btn.classList.toggle('bg-primary', active);
-      btn.classList.toggle('text-white', active);
-      btn.classList.toggle('shadow-lg', active);
-      btn.classList.toggle('shadow-primary/20', active);
-
-      btn.classList.toggle('border', !active);
-      btn.classList.toggle('border-slate-300', !active);
-      btn.classList.toggle('bg-white', !active);
-      btn.classList.toggle('text-slate-700', !active);
+      btn.classList.toggle('active', active);
     });
   }
 
@@ -465,37 +593,33 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 {{-- ORGULLO ACADÉMICO --}}
-<section class="py-24 lg:py-28 bg-[#f3f5f8] text-slate-900 border-b border-primary/10" id="equipo">
+<section class="section-shell bg-[#f3f5f8] text-slate-900 border-b border-primary/10" id="equipo">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div class="section-header flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-                <span class="text-primary font-bold uppercase tracking-widest mb-2 block">Comunidad</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 font-display">Orgullo Académico</h2>
-                <p class="text-slate-600 mt-4 max-w-2xl">
+                <span class="section-kicker">Comunidad</span>
+                <h2 class="section-title font-display">Orgullo Académico</h2>
+                <p class="section-copy">
                     Exalumnos y estudiantes destacados que representan el impacto real de CIDECH: disciplina, resultados y propósito.
                 </p>
             </div>
 
             <div class="hidden md:flex gap-2">
-                <button id="alumniPrev"
-                        class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-800 hover:bg-primary hover:border-primary hover:text-white transition-all disabled:opacity-40 disabled:hover:bg-white disabled:hover:border-slate-200 disabled:hover:text-slate-800"
-                        type="button" aria-label="Anterior">
+                <button id="alumniPrev" class="carousel-nav-btn" type="button" aria-label="Anterior">
                     <span class="material-symbols-outlined">arrow_back</span>
                 </button>
 
-                <button id="alumniNext"
-                        class="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-800 hover:bg-primary hover:border-primary hover:text-white transition-all disabled:opacity-40 disabled:hover:bg-white disabled:hover:border-slate-200 disabled:hover:text-slate-800"
-                        type="button" aria-label="Siguiente">
+                <button id="alumniNext" class="carousel-nav-btn" type="button" aria-label="Siguiente">
                     <span class="material-symbols-outlined">arrow_forward</span>
                 </button>
             </div>
         </div>
 
-        <div id="alumniCarousel" class="flex overflow-x-auto hide-scrollbar gap-6 pb-6 snap-x snap-proximity scroll-smooth">
+        <div id="alumniCarousel" class="carousel-rail flex overflow-x-auto hide-scrollbar snap-x snap-proximity scroll-smooth">
             {{-- 1 --}}
-            <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
+            <div class="alumni-card alumni-card-shell snap-center">
                 <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded-2xl bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
+                    <div class="aspect-[4/5] w-full rounded-[1.5rem] bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
                         <img src="{{ asset('img/estudiantes/milton.png') }}"
                              alt="Milton Ccota Mamani"
                              class="w-full h-full object-cover"/>
@@ -527,9 +651,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             {{-- 2 --}}
-            <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
+            <div class="alumni-card alumni-card-shell snap-center">
                 <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded-2xl bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
+                    <div class="aspect-[4/5] w-full rounded-[1.5rem] bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
                         <img src="{{ asset('img/estudiantes/alex.png') }}"
                              alt="Alex Gallegos Humire"
                              class="w-full h-full object-cover"/>
@@ -555,9 +679,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             {{-- 3 --}}
-            <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
+            <div class="alumni-card alumni-card-shell snap-center">
                 <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded-2xl bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
+                    <div class="aspect-[4/5] w-full rounded-[1.5rem] bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
                         <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"
                              alt="Exalumno destacado"/>
@@ -577,9 +701,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             {{-- 4 --}}
-            <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
+            <div class="alumni-card alumni-card-shell snap-center">
                 <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded-2xl bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
+                    <div class="aspect-[4/5] w-full rounded-[1.5rem] bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
                         <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
                              alt="Exalumno destacado"/>
@@ -599,9 +723,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             {{-- 5 --}}
-            <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
+            <div class="alumni-card alumni-card-shell snap-center">
                 <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded-2xl bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
+                    <div class="aspect-[4/5] w-full rounded-[1.5rem] bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
                         <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80"
                              alt="Exalumno destacado"/>
@@ -621,9 +745,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             {{-- 6 --}}
-            <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
+            <div class="alumni-card alumni-card-shell snap-center">
                 <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded-2xl bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
+                    <div class="aspect-[4/5] w-full rounded-[1.5rem] bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
                         <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80"
                              alt="Exalumno destacado"/>
@@ -643,9 +767,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             {{-- 7 --}}
-            <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
+            <div class="alumni-card alumni-card-shell snap-center">
                 <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded-2xl bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
+                    <div class="aspect-[4/5] w-full rounded-[1.5rem] bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
                         <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                              src="https://images.unsplash.com/photo-1520975682031-a6ad0f66f03d?auto=format&fit=crop&w=1200&q=80"
                              alt="Exalumno destacado"/>
@@ -665,9 +789,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             {{-- 8 --}}
-            <div class="alumni-card min-w-[85vw] sm:min-w-[420px] md:min-w-[420px] lg:min-w-[420px] snap-center">
+            <div class="alumni-card alumni-card-shell snap-center">
                 <div class="group relative">
-                    <div class="aspect-[3/4] w-full rounded-2xl bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
+                    <div class="aspect-[4/5] w-full rounded-[1.5rem] bg-white mb-5 relative overflow-hidden border border-slate-200 group-hover:border-primary/35 transition-colors shadow-[0_12px_35px_rgba(15,23,42,0.05)]">
                         <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                              src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80"
                              alt="Exalumno destacado"/>
