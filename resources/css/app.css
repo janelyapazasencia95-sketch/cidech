@@ -1,11 +1,8 @@
 @import "tailwindcss";
-
-/* Para que Tailwind detecte tus Blade/JS */
 @source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
 @source "../../storage/framework/views/*.php";
 @source "../**/*.blade.php";
 @source "../**/*.js";
-
 /* Tokens: ahora existen bg-background-dark, bg-surface-dark, bg-primary, etc */
 @theme {
   --color-primary: #EF233C;
